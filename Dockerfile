@@ -1,12 +1,11 @@
-FROM node AS builder
+FROM node
 
-RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
-COPY . /usr/src/app
+
+COPY . .
+EXPOSE 3000
 
 RUN npm install && npm install typescript@latest -g
 RUN tsc
 
-COPY --from=builder /usr/src/app/dist/ /usr/src/app
-EXPOSE 3000
 CMD [ "npm", "start" ]
