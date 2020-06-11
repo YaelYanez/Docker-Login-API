@@ -92,7 +92,7 @@ app.post("/api/auth/create", async (req: Request, res: Response) => {
   }
 });
 
-app.listen(ENV.API.PORT, async () => {
+app.listen(ENV.API.PORT, ENV.API.HOST, async () => {
   console.log(`Server runnning on port: ${ENV.API.PORT}`);
   try {
     await mongoDB.connect();
