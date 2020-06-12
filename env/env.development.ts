@@ -1,7 +1,7 @@
 export default {
   API: {
     NAME: "API de autenticacion",
-    HOST: "0.0.0.0",
+    HOST: "http://localhost.com",
     PORT: 3000,
     ENVIRONMENT: "Development",
   },
