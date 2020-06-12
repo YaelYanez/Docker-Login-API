@@ -17,6 +17,10 @@ app.use(express.json());
 // Middleware for CORS
 app.use(cors({ origin: true, credentials: true }));
 
+app.get('/test', (req: Request, res: Response) => {
+  res.send(200).json({ oK: true });
+})
+
 app.post("/api/auth/login", async (req: Request, res: Response) => {
   const { username, password } = req.body;
 
@@ -93,7 +97,7 @@ app.post("/api/auth/create", async (req: Request, res: Response) => {
 });
 
 app.listen(ENV.API.PORT, async () => {
-  console.log(`Server runnning on port: ${ENV.API.PORT}`);
+  console.log(`Server runnning on port: ${ENV.API.PORT} gg`);
   try {
     await mongoDB.connect();
   } catch (error) {
